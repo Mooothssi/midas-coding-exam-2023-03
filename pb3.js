@@ -53,12 +53,13 @@ function isDivisibleByPrimes(dividend, primeList) {
   return false
 }
 
-function isPrimeHeuristic(dividend, primeList) {
+function isPrime(dividend, primeList) {
   if (dividend == 1) return false
   if (primeList.includes(dividend)) return true
   if (isDivisibleByPrimes(dividend, primeList)) {
     return false
   }
+  // brute-force it.
   for (let n = 31; n < dividend - 1; n++) {
     if (dividend % n === 0) {
       return true
@@ -74,7 +75,7 @@ function primeAt(ordinalLimit) {
   const primeList = [...DEFAULT_PRIME_LIST]
   maxPrime = Math.max(...primeList)
   for (let i = 1; i <= +Infinity; i++) {
-    if (isPrimeHeuristic(i, primeList)) {
+    if (isPrime(i, primeList)) {
       ordinalCounter++
       targetPrime = i
       if (targetPrime > maxPrime) {
