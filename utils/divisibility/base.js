@@ -9,6 +9,9 @@ const DIV_ADJUSTMENTS = new Map([
   [29, +3],
   [31, -3],
   [37, -11],
+  [41, -4],
+  [43, +13],
+  [47, -14],
 ])
 
 function handleWithDigitAdjustments(dividend, divisor) {

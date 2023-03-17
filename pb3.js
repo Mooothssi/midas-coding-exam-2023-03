@@ -22,8 +22,8 @@ function isPrime(num, primeList, maxPrime = 0) {
   if (isDivisibleByPrimes(num, primeList)) {
     return false
   }
-  // brute-force it.
-  for (let n = maxPrime; n < num - 1; n++) {
+  // Brute-force the number. Cannot factorize greater than the number itself squared.
+  for (let n = maxPrime; n < Math.sqrt(num); n++) {
     if (num % n === 0) {
       return true
     }
