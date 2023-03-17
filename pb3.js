@@ -15,30 +15,30 @@ function getLastDigit(number) {
 function removeLastDigit(number) {
   return Math.floor((number - getLastDigit(number)) / 10)
 }
+
 /**
- * check three divisibility rule
- * @param {*} number
- * @param {*} sum
+ * Checks whether the number is divisible by 3 using a Divisibility Rule Shorthand of 3 to improve calculation performance
+ * @param {Number} dividend the target dividend
  * @returns
  */
-function isDivisibleByThree(number, sum = 0) {
-  let remainder = number % 10
+
+function isDivisibleByThree(dividend, sum = 0) {
+  let remainder = dividend % 10
   sum += remainder
-  if (number > 9) {
-    return isDivisibleByThree(Math.floor(number / 10), sum)
+  if (dividend > 9) {
+    return isDivisibleByThree(Math.floor(dividend / 10), sum)
   }
   return sum % 3 === 0
 }
 
 /**
- * check seven divisibility rule
- * @param {*} number
- * @param {*} sum
+ * Checks whether the number is divisible by 7 using a Divisibility Rule Shorthand of 7 to improve performance
+ * @param {Number} dividend the target dividend
  * @returns
  */
-function isDivisibleBySeven(number) {
-  const doubledLastDigit = getLastDigit(number) * 2
-  const intermediate = removeLastDigit(number) - doubledLastDigit
+function isDivisibleBySeven(dividend) {
+  const doubledLastDigit = getLastDigit(dividend) * 2
+  const intermediate = removeLastDigit(dividend) - doubledLastDigit
   const remainder = intermediate % 7
   if (remainder !== 0 && remainder >= 6) {
     return isDivisibleBySeven(intermediate)
@@ -46,21 +46,16 @@ function isDivisibleBySeven(number) {
   return remainder % 7 === 0
 }
 
-function isDivisibleByThirteen(number) {
-  const quadrupledLastDigit = getLastDigit(number) * 4
-  const intermediate = removeLastDigit(number) + quadrupledLastDigit
-  const remainder = intermediate % 13
-  if (remainder !== 0 && remainder >= 12) {
-    return isDivisibleByThirteen(intermediate)
-  }
-  return remainder % 13 === 0
-}
-
-function isDivisibleByEleven(number) {
+/**
+ * Checks whether the number is divisible by 11 using a Divisibility Rule Shorthand of 11
+ * @param {Number} dividend the target dividend
+ * @returns
+ */
+function isDivisibleByEleven(dividend) {
   let counter = 1
   const oddPlaces = []
   const evenPlaces = []
-  let modifiableNum = number
+  let modifiableNum = dividend
   let remainder = 11
   while (modifiableNum >= 1) {
     remainder = modifiableNum % 10
@@ -76,44 +71,74 @@ function isDivisibleByEleven(number) {
   return diff == 0 || diff % 11 === 0
 }
 
-function isDivisibleBy(divisor, number) {
+/**
+ * Checks whether the number is divisible by 13 using a Divisibility Rule Shorthand of 13
+ * @param {Number} dividend the target dividend
+ * @returns
+ */
+function isDivisibleByThirteen(number) {
+  const quadrupledLastDigit = getLastDigit(number) * 4
+  const intermediate = removeLastDigit(number) + quadrupledLastDigit
+  const remainder = intermediate % 13
+  if (remainder !== 0 && remainder >= 12) {
+    return isDivisibleByThirteen(intermediate)
+  }
+  return remainder % 13 === 0
+}
+
+/**
+ * Checks whether the number is divisible by 17 using a Divisibility Rule Shorthand of 17
+ * (MANSAE, YEAH!)
+ * @param {Number} dividend the target dividend
+ * @returns
+ */
+function isDivisibleBySeventeen(dividend) {
+  const fiveTimesLastDigit = getLastDigit(dividend) * 5
+  const intermediate = removeLastDigit(dividend) - fiveTimesLastDigit
+  const remainder = intermediate % 17
+  if (remainder !== 0 && remainder >= 16) {
+    return isDivisibleBySeventeen(intermediate)
+  }
+  return remainder % 17 === 0
+}
+
+function isDivisibleBy(divisor, dividend) {
   switch (divisor) {
     case 2:
-      return getLastDigit(number) % 2 === 0
+      return getLastDigit(dividend) % 2 === 0
     case 3:
-      return isDivisibleByThree(number)
+      return isDivisibleByThree(dividend)
     case 5:
-      const lastDigit = getLastDigit(number)
+      const lastDigit = getLastDigit(dividend)
       return lastDigit === 5 || lastDigit === 0
     case 7:
-      return isDivisibleBySeven(number)
+      return isDivisibleBySeven(dividend)
     case 11:
-      return isDivisibleByEleven(number)
+      return isDivisibleByEleven(dividend)
     case 13:
-      return isDivisibleByThirteen(number)
+      return isDivisibleByThirteen(dividend)
+    case 17:
+      return isDivisibleBySeventeen(dividend)
     default:
-      return number % divisor === 0
+      return dividend % divisor === 0
   }
 }
 
-function isDivisibleByPrimes(number, primeList) {
+function isDivisibleByPrimes(dividend, primeList) {
   for (const prime of primeList) {
-    if (isDivisibleBy(prime, number)) return true
+    if (isDivisibleBy(prime, dividend)) return true
   }
   return false
 }
 
-function isPrimeHeuristic(number, primeList) {
-  if (number == 1) return false
-  // single-digit primes checker
-  if (primeList.includes(number)) return true
-  // TODO: brute force by two-digit previous primes
-
-  if (isDivisibleByPrimes(number, primeList)) {
+function isPrimeHeuristic(dividend, primeList) {
+  if (dividend == 1) return false
+  if (primeList.includes(dividend)) return true
+  if (isDivisibleByPrimes(dividend, primeList)) {
     return false
   }
-  for (let n = 31; n < number - 1; n++) {
-    if (number % n === 0) {
+  for (let n = 31; n < dividend - 1; n++) {
+    if (dividend % n === 0) {
       return true
     }
   }
