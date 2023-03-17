@@ -4,11 +4,11 @@
  */
 const { primeAt } = require('./pb3')
 
-test('primeAt(1) = 2', () => {
+test('primeAt(1) = 2 ✅', () => {
   expect(primeAt(1)).toBe(2)
 })
 
-test('primeAt(2) = 3', () => {
+test('primeAt(2) = 3 ✅', () => {
   expect(primeAt(2)).toBe(3)
 })
 
