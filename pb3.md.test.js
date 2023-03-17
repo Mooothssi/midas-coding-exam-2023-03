@@ -14,10 +14,10 @@ describe('(3M) Problem 3: Code Tests (medium numbers)', () => {
   test('3M.2. primeAt(4000) = 37813 ✅ (📖 x-ref from WolframAlpha)', () => {
     expect(primeAt(4000)).toBe(37813)
   })
-  test('3M.2. primeAt(6000) = 59359 ✅ (📖 x-ref from WolframAlpha)', () => {
+  test('3M.3. primeAt(6000) = 59359 ✅ (📖 x-ref from WolframAlpha)', () => {
     expect(primeAt(6000)).toBe(59359)
   })
-  test('3M.2. primeAt(8000) = 81799 ✅ (📖 x-ref from WolframAlpha)', () => {
+  test('3M.4. primeAt(8000) = 81799 ✅ (📖 x-ref from WolframAlpha)', () => {
     expect(primeAt(8000)).toBe(81799)
   })
 })
