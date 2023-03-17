@@ -20,13 +20,13 @@ test('primeAt(100) = 541', () => {
   expect(primeAt(100)).toBe(541)
 })
 
-// test('primeAt(2000) = ?', () => {
-//   expect(primeAt(2000)).toBe('?')
-// })
+test('primeAt(2000) = 12637 (?)', () => {
+  expect(primeAt(2000)).toBe(12637)
+})
 
-// test('primeAt(50000) = ?', () => {
-//   expect(primeAt(50000)).toBe('?')
-// })
+test('primeAt(50000) = ?', () => {
+  expect(primeAt(50000)).toBe('?')
+})
 
 // test('primeAt(1000000) = ?', () => {
 //   expect(primeAt(1000000)).toBe('?')
