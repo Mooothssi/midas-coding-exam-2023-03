@@ -20,10 +20,6 @@ test('primeAt(100) = 541', () => {
   expect(primeAt(100)).toBe(541)
 })
 
-test('primeAt(100) = 541', () => {
-  expect(primeAt(100)).toBe(541)
-})
-
 // test('primeAt(2000) = ?', () => {
 //   expect(primeAt(2000)).toBe('?')
 // })
