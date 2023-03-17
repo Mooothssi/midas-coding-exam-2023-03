@@ -91,14 +91,17 @@ function isPrimeHeuristic(number, primeList) {
   return true
 }
 
-// TODO: append new prime to list
 function primeAt(ordinalLimit) {
   let targetPrime = 2,
     ordinalCounter = 0
+  const primeList = [...DEFAULT_PRIME_LIST]
   for (let i = 1; i <= Number.POSITIVE_INFINITY; i++) {
-    if (isPrimeHeuristic(i, DEFAULT_PRIME_LIST)) {
+    if (isPrimeHeuristic(i, primeList)) {
       ordinalCounter++
       targetPrime = i
+      if (!primeList.includes(targetPrime)) {
+        primeList.push(targetPrime)
+      }
       if (ordinalLimit === ordinalCounter) break
     }
   }

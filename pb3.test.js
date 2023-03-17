@@ -12,20 +12,23 @@ test('primeAt(2) = 3', () => {
   expect(primeAt(2)).toBe(3)
 })
 
-test('primeAt(6) = 13', () => {
+test('primeAt(6) = 13 ✅', () => {
   expect(primeAt(6)).toBe(13)
 })
 
-test('primeAt(100) = 541', () => {
+test('primeAt(100) = 541 ✅', () => {
   expect(primeAt(100)).toBe(541)
 })
 
-test('primeAt(2000) = 12637 (?)', () => {
-  expect(primeAt(2000)).toBe(12637)
+test('primeAt(2000) = 17389 ✅ (X-Ref from WolframAlpha)', () => {
+  expect(primeAt(2000)).toBe(17389)
 })
-
-test('primeAt(50000) = ?', () => {
-  expect(primeAt(50000)).toBe('?')
+/**
+ * should use Prime number theorem / Chebyshev's theorem
+ * lim x to +inf (π(x) / [x / ln(x)]) = 1
+ */
+test('primeAt(50000) = 611953 ✅ (X-Ref from WolframAlpha)', () => {
+  expect(primeAt(50000)).toBe(611953)
 })
 
 // test('primeAt(1000000) = ?', () => {
