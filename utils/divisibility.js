@@ -16,7 +16,7 @@ const {
   isDivisibleBySeventeen,
   isDivisibleByNineteen,
 } = require('./divisibility.10s')
-const { isDivisibleByTwentyThree } = require('./divisibility.20s')
+const { isDivisibleByTwentyThree, isDivisibleByTwentyNine } = require('./divisibility.20s')
 module.exports = {
   isEven,
   isDivisibleByThree,
@@ -27,4 +27,5 @@ module.exports = {
   isDivisibleBySeventeen,
   isDivisibleByNineteen,
   isDivisibleByTwentyThree,
+  isDivisibleByTwentyNine
 }

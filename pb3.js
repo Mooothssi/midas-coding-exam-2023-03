@@ -16,6 +16,7 @@ const {
   isDivisibleByThirteen,
   isDivisibleByNineteen,
   isDivisibleByTwentyThree,
+  isDivisibleByTwentyNine
 } = require('./utils/divisibility')
 
 function isDivisibleBy(divisor, dividend) {
@@ -38,6 +39,8 @@ function isDivisibleBy(divisor, dividend) {
       return isDivisibleByNineteen(dividend)
     case 23:
       return isDivisibleByTwentyThree(dividend)
+    case 29:
+      return isDivisibleByTwentyNine(dividend)
     default:
       return dividend % divisor === 0
   }

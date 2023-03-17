@@ -11,7 +11,7 @@ const { getLastDigit, removeLastDigit } = require('./base')
  * @param {Number} dividend the target dividend
  * @returns
  */
-function isDivisibleByTwentyThree(dividend, sum = 0) {
+function isDivisibleByTwentyThree(dividend) {
   const sevenTimesLastDigit = getLastDigit(dividend) * 7
   const intermediate = removeLastDigit(dividend) + sevenTimesLastDigit
   const remainder = intermediate % 23
@@ -21,4 +21,20 @@ function isDivisibleByTwentyThree(dividend, sum = 0) {
   return remainder % 23 === 0
 }
 
-module.exports = { isDivisibleByTwentyThree }
+/**
+ * Checks whether the number is divisible by 29 using a Divisibility Rule Shorthand of 29
+ *
+ * @param {Number} dividend the target dividend
+ * @returns
+ */
+function isDivisibleByTwentyNine(dividend) {
+  const thriceLastDigit = getLastDigit(dividend) * 3
+  const intermediate = removeLastDigit(dividend) + thriceLastDigit
+  const remainder = intermediate % 29
+  if (remainder !== 0 && remainder >= 28) {
+    return isDivisibleByTwentyNine(intermediate)
+  }
+  return remainder % 29 === 0
+}
+
+module.exports = { isDivisibleByTwentyThree, isDivisibleByTwentyNine }
