@@ -1,7 +1,10 @@
 /**
  * Author: Tharathorn Boonruttanasathian
  * (c) 17 Mar 2023
+ * 
+ * In response to Midas Developer Test (2023-03)
  */
+
 /**
  * (Problem 1) Solution
  * @param {*} numberArray
