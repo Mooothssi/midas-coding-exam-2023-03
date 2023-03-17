@@ -23,19 +23,19 @@ describe('Problem 3: Code Tests', () => {
   test('5. primeAt(2000) = 17389 ✅ (X-Ref from WolframAlpha)', () => {
     expect(primeAt(2000)).toBe(17389)
   })
-  /**
-   * TODO: Should use Prime number theorem / Chebyshev's theorem
-   * lim x to +inf (π(x) / [x / ln(x)]) = 1
-   */
+
   test('6. primeAt(50000) = 611953 ✅ (X-Ref from WolframAlpha)', () => {
     expect(primeAt(50000)).toBe(611953)
   })
 
-  // test('7. primeAt(1000000) = 15485863 ✅ (X-Ref from WolframAlpha)', () => {
-  //   expect(primeAt(1000000)).toBe(15485863)
-  // })
-
-  // test('8. primeAt(20000000) = 373587883 ✅ (X-Ref from WolframAlpha)', () => {
-  //   expect(primeAt(20000000)).toBe(373587883)
-  // })
+  test('7. primeAt(1000000) = 15485863 ✅ (X-Ref from WolframAlpha)', () => {
+    expect(primeAt(1000000)).toBe(15485863)
+  })
+  /**
+   * TODO: Should use Prime Number Theorem / Chebyshev's Theorem if exceeding this line
+   * lim x to +inf (π(x) / [x / ln(x)]) = 1
+   */
+  test('8. primeAt(20000000) = 373587883 ✅ (X-Ref from WolframAlpha)', () => {
+    expect(primeAt(20000000)).toBe(373587883)
+  })
 })
