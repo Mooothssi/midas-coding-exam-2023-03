@@ -6,12 +6,12 @@
  */
 
 const { getLastDigit, removeLastDigit } = require('./base')
+
 /**
  * Checks whether the number is divisible by 3 using a Divisibility Rule Shorthand of 3 to improve calculation performance
  * @param {Number} dividend the target dividend
  * @returns
  */
-
 function isDivisibleByThree(dividend, sum = 0) {
   let remainder = dividend % 10
   sum += remainder
@@ -26,7 +26,6 @@ function isDivisibleByThree(dividend, sum = 0) {
  * @param {Number} dividend the target dividend
  * @returns
  */
-
 function isDivisibleByFive(dividend, sum = 0) {
   const lastDigit = getLastDigit(dividend)
   return lastDigit === 5 || lastDigit === 0
