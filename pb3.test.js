@@ -4,7 +4,7 @@
  */
 const { primeAt } = require('./pb3')
 
-describe('Problem 3: Code Tests', () => {
+describe('Problem 3: Code Tests (small numbers)', () => {
   test('1. primeAt(1) = 2 ✅', () => {
     expect(primeAt(1)).toBe(2)
   })
@@ -23,7 +23,9 @@ describe('Problem 3: Code Tests', () => {
   test('5. primeAt(2000) = 17389 ✅ (X-Ref from WolframAlpha)', () => {
     expect(primeAt(2000)).toBe(17389)
   })
+})
 
+describe('Problem 3: Code Tests (large numbers)', () => {
   test('6. primeAt(50000) = 611953 ✅ (X-Ref from WolframAlpha)', () => {
     expect(primeAt(50000)).toBe(611953)
   })
