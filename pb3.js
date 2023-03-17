@@ -53,15 +53,15 @@ function isDivisibleByPrimes(dividend, primeList) {
   return false
 }
 
-function isPrime(dividend, primeList) {
-  if (dividend == 1) return false
-  if (primeList.includes(dividend)) return true
-  if (isDivisibleByPrimes(dividend, primeList)) {
+function isPrime(num, primeList) {
+  if (num == 1) return false
+  if (primeList.includes(num)) return true
+  if (isDivisibleByPrimes(num, primeList)) {
     return false
   }
   // brute-force it.
-  for (let n = 31; n < dividend - 1; n++) {
-    if (dividend % n === 0) {
+  for (let n = Math.max(...primeList); n < num - 1; n++) {
+    if (num % n === 0) {
       return true
     }
   }
