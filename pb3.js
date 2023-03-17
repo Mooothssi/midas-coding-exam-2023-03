@@ -39,13 +39,41 @@ function isDivisibleByThree(number, sum = 0) {
 function isDivisibleBySeven(number) {
   const doubledLastDigit = getLastDigit(number) * 2
   const intermediate = removeLastDigit(number) - doubledLastDigit
-  return intermediate % 7 === 0
+  const remainder = intermediate % 7
+  if (remainder !== 0 && remainder >= 6) {
+    return isDivisibleBySeven(intermediate)
+  }
+  return remainder % 7 === 0
 }
 
 function isDivisibleByThirteen(number) {
   const quadrupledLastDigit = getLastDigit(number) * 4
   const intermediate = removeLastDigit(number) + quadrupledLastDigit
-  return intermediate % 13 === 0
+  const remainder = intermediate % 13
+  if (remainder !== 0 && remainder >= 12) {
+    return isDivisibleByThirteen(intermediate)
+  }
+  return remainder % 13 === 0
+}
+
+function isDivisibleByEleven(number) {
+  let counter = 1
+  const oddPlaces = []
+  const evenPlaces = []
+  let modifiableNum = number
+  let remainder = 11
+  while (modifiableNum >= 1) {
+    remainder = modifiableNum % 10
+    if (counter % 2 === 0) evenPlaces.push(remainder)
+    else oddPlaces.push(remainder)
+    counter++
+    modifiableNum = Math.floor(modifiableNum / 10)
+  }
+  const diff = Math.abs(
+    oddPlaces.reduce((a, b) => a + b, 0) -
+      evenPlaces.reduce((a, b) => a + b, 0),
+  )
+  return diff == 0 || diff % 11 === 0
 }
 
 function isDivisibleBy(divisor, number) {
@@ -55,11 +83,12 @@ function isDivisibleBy(divisor, number) {
     case 3:
       return isDivisibleByThree(number)
     case 5:
-      return getLastDigit(number) === 5 || getLastDigit(number) === 0
+      const lastDigit = getLastDigit(number)
+      return lastDigit === 5 || lastDigit === 0
     case 7:
       return isDivisibleBySeven(number)
     case 11:
-      return number % 11 === 0
+      return isDivisibleByEleven(number)
     case 13:
       return isDivisibleByThirteen(number)
     default:
