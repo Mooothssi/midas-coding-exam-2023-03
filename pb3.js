@@ -90,16 +90,16 @@ function isPrimeHeuristic(number, primeList) {
   }
   return true
 }
-// TODO: should store previous `primeList`, read from serialized prime in file
+// TODO: should store previous `primeList` to `DEFAULT_PRIME_LIST`, read from serialized prime in file
 function primeAt(ordinalLimit) {
   let targetPrime = 2,
     ordinalCounter = 0
   const primeList = [...DEFAULT_PRIME_LIST]
-  for (let i = 1; i <= Number.POSITIVE_INFINITY; i++) {
+  for (let i = 1; i <= +Infinity; i++) {
     if (isPrimeHeuristic(i, primeList)) {
       ordinalCounter++
       targetPrime = i
-      if (!primeList.includes(targetPrime)) {
+      if (targetPrime > Math.max(...primeList)) {
         primeList.push(targetPrime)
       }
       if (ordinalLimit === ordinalCounter) break
