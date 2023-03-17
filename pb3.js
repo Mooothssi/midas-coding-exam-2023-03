@@ -90,7 +90,7 @@ function isPrimeHeuristic(number, primeList) {
   }
   return true
 }
-
+// TODO: should store previous `primeList`
 function primeAt(ordinalLimit) {
   let targetPrime = 2,
     ordinalCounter = 0

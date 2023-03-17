@@ -24,7 +24,7 @@ test('primeAt(2000) = 17389 ✅ (X-Ref from WolframAlpha)', () => {
   expect(primeAt(2000)).toBe(17389)
 })
 /**
- * should use Prime number theorem / Chebyshev's theorem
+ * TODO: Should use Prime number theorem / Chebyshev's theorem
  * lim x to +inf (π(x) / [x / ln(x)]) = 1
  */
 test('primeAt(50000) = 611953 ✅ (X-Ref from WolframAlpha)', () => {
