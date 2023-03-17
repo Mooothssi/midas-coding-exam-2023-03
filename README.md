@@ -10,7 +10,7 @@
 
 | Problem #                          | Applied maths                                          | Applied computer science                          | Last solved on      | # attempts |
 | ---------------------------------- | ------------------------------------------------------ | ------------------------------------------------- | ------------------- | ---------- |
-| 1 _(Number Frequency Map)_         | _N/A_                                                  | Big-O notation, Time complexity, Hashmap analysis | 17 Mar '23 at 15:43 | **1**      |
+| 1 _(Number Frequency Map)_         | Counting                                               | Big-O notation, Time complexity, Hashmap analysis | 17 Mar '23 at 15:43 | **1**      |
 | 2                                  | _unfinished_                                           | _N/A_                                             | _N/A_               | **0**      |
 | 3 _(Get Prime Number at Position)_ | Divisibility rules of _2, 3, 5, 7, 11, 13_; Arithmetic | Big-O notation, Time complexity analysis          | 17 Mar '23 at 15:48 | **1**      |
 | 4 _(Dungeon Puzzle)_               | Logic, Set Theory, Inference                           |                                                   | 17 Mar '23 at 09:01 | **1**      |
