@@ -5,7 +5,7 @@
  * In response to Midas Developer Test (2023-03)
  */
 
-const { getLastDigit, removeLastDigit } = require('./base')
+const { getLastDigit, removeLastDigit } = require('../base')
 
 /**
  * Checks whether the number is divisible by 3 using a Divisibility Rule Shorthand of 3 to improve calculation performance

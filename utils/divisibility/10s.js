@@ -4,7 +4,7 @@
  *
  * In response to Midas Developer Test (2023-03)
  */
-const { getLastDigit, removeLastDigit } = require('./base')
+const { getLastDigit, removeLastDigit } = require('../base')
 /**
  * Checks whether the number is divisible by 11 using a Divisibility Rule Shorthand of 11
  * @param {Number} dividend the target dividend

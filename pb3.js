@@ -6,45 +6,7 @@
  */
 
 const DEFAULT_PRIME_LIST = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-const {
-  isEven,
-  isDivisibleByThree,
-  isDivisibleByFive,
-  isDivisibleBySeven,
-  isDivisibleByEleven,
-  isDivisibleBySeventeen,
-  isDivisibleByThirteen,
-  isDivisibleByNineteen,
-  isDivisibleByTwentyThree,
-  isDivisibleByTwentyNine,
-} = require('./utils/divisibility')
-
-function isDivisibleBy(divisor, dividend) {
-  switch (divisor) {
-    case 2:
-      return isEven(dividend)
-    case 3:
-      return isDivisibleByThree(dividend)
-    case 5:
-      return isDivisibleByFive(dividend)
-    case 7:
-      return isDivisibleBySeven(dividend)
-    case 11:
-      return isDivisibleByEleven(dividend)
-    case 13:
-      return isDivisibleByThirteen(dividend)
-    case 17:
-      return isDivisibleBySeventeen(dividend)
-    case 19:
-      return isDivisibleByNineteen(dividend)
-    case 23:
-      return isDivisibleByTwentyThree(dividend)
-    case 29:
-      return isDivisibleByTwentyNine(dividend)
-    default:
-      return dividend % divisor === 0
-  }
-}
+const { isDivisibleBy } = require('./utils/divisibility')
 
 function isDivisibleByPrimes(dividend, primeList) {
   for (const prime of primeList) {
