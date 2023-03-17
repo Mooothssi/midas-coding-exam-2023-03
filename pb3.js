@@ -16,7 +16,7 @@ const {
   isDivisibleByThirteen,
   isDivisibleByNineteen,
   isDivisibleByTwentyThree,
-  isDivisibleByTwentyNine
+  isDivisibleByTwentyNine,
 } = require('./utils/divisibility')
 
 function isDivisibleBy(divisor, dividend) {
@@ -68,15 +68,18 @@ function isPrimeHeuristic(dividend, primeList) {
 }
 // TODO: should store previous `primeList` to `DEFAULT_PRIME_LIST`, read from serialized prime in file
 function primeAt(ordinalLimit) {
-  let targetPrime = 2,
-    ordinalCounter = 0
+  let targetPrime = 2
+  let ordinalCounter = 0
+  let maxPrime = 2
   const primeList = [...DEFAULT_PRIME_LIST]
+  maxPrime = Math.max(...primeList)
   for (let i = 1; i <= +Infinity; i++) {
     if (isPrimeHeuristic(i, primeList)) {
       ordinalCounter++
       targetPrime = i
-      if (targetPrime > Math.max(...primeList)) {
+      if (targetPrime > maxPrime) {
         primeList.push(targetPrime)
+        maxPrime = targetPrime
       }
       if (ordinalLimit === ordinalCounter) break
     }

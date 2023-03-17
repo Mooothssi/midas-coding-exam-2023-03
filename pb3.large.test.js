@@ -19,7 +19,7 @@ describe('(3L) Problem 3: Code Tests (large numbers)', () => {
    * TODO: Should use Prime Number Theorem / Chebyshev's Theorem if exceeding this line
    * lim x to +inf (π(x) / [x / ln(x)]) = 1
    */
-  test('3L.3. primeAt(20000000) = 373587883 ❌ (X-Ref from WolframAlpha, failed)', () => {
+  test('3L.3. primeAt(20000000) = 373587883 ✅ (X-Ref from WolframAlpha, failed)', () => {
     expect(primeAt(20000000)).toBe(373587883)
   })
 })
