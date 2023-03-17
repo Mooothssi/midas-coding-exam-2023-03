@@ -4,7 +4,7 @@
   "description": "",
   "main": "pb1.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "author": "Tharathorn B",
   "license": "ISC",
