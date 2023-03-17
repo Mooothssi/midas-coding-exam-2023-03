@@ -4,7 +4,7 @@
  *
  * In response to Midas Developer Test (2023-03)
  */
-const { getLastDigit, removeLastDigit } = require('../base')
+const { manipulateDigitToIntermediate } = require('./base')
 /**
  * Checks whether the number is divisible by 11 using a Divisibility Rule Shorthand of 11
  * @param {Number} dividend the target dividend
@@ -35,14 +35,8 @@ function isDivisibleByEleven(dividend) {
  * @param {Number} dividend the target dividend
  * @returns
  */
-function isDivisibleByThirteen(number) {
-  const quadrupledLastDigit = getLastDigit(number) * 4
-  const intermediate = removeLastDigit(number) + quadrupledLastDigit
-  const remainder = intermediate % 13
-  if (remainder !== 0 && remainder >= 12) {
-    return isDivisibleByThirteen(intermediate)
-  }
-  return remainder % 13 === 0
+function isDivisibleByThirteen(dividend) {
+  return manipulateDigitToIntermediate(dividend, +4, 13)
 }
 
 /**
@@ -52,13 +46,7 @@ function isDivisibleByThirteen(number) {
  * @returns
  */
 function isDivisibleBySeventeen(dividend) {
-  const fiveTimesLastDigit = getLastDigit(dividend) * 5
-  const intermediate = removeLastDigit(dividend) - fiveTimesLastDigit
-  const remainder = intermediate % 17
-  if (remainder !== 0 && remainder >= 16) {
-    return isDivisibleBySeventeen(intermediate)
-  }
-  return remainder % 17 === 0
+  return manipulateDigitToIntermediate(dividend, -5, 17)
 }
 
 /**
@@ -68,13 +56,7 @@ function isDivisibleBySeventeen(dividend) {
  * @returns
  */
 function isDivisibleByNineteen(dividend) {
-  const twoTimesLastDigit = getLastDigit(dividend) * 2
-  const intermediate = removeLastDigit(dividend) + twoTimesLastDigit
-  const remainder = intermediate % 19
-  if (remainder !== 0 && remainder >= 18) {
-    return isDivisibleByNineteen(intermediate)
-  }
-  return remainder % 19 === 0
+  return manipulateDigitToIntermediate(dividend, +2, 19)
 }
 module.exports = {
   isDivisibleByEleven,

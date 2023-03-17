@@ -4,7 +4,8 @@
  *
  * In response to Midas Developer Test (2023-03)
  */
-const { getLastDigit, removeLastDigit } = require('../base')
+
+const { manipulateDigitToIntermediate } = require('./base')
 
 /**
  * Checks whether the number is divisible by 31 using a Divisibility Rule Shorthand of 31
@@ -13,13 +14,7 @@ const { getLastDigit, removeLastDigit } = require('../base')
  * @returns
  */
 function isDivisibleByThirtyOne(dividend) {
-  const thriceLastDigit = getLastDigit(dividend) * 3
-  const intermediate = removeLastDigit(dividend) - thriceLastDigit
-  const remainder = intermediate % 31
-  if (remainder !== 0 && remainder >= 30) {
-    return isDivisibleByThirtyOne(intermediate)
-  }
-  return remainder % 31 === 0
+  return manipulateDigitToIntermediate(dividend, -3, 31)
 }
 
 /**
@@ -29,13 +24,7 @@ function isDivisibleByThirtyOne(dividend) {
  * @returns
  */
 function isDivisibleByThirtySeven(dividend) {
-  const elevenTimesLastDigit = getLastDigit(dividend) * 11
-  const intermediate = removeLastDigit(dividend) - elevenTimesLastDigit
-  const remainder = intermediate % 37
-  if (remainder !== 0 && remainder >= 36) {
-    return isDivisibleByThirtySeven(intermediate)
-  }
-  return remainder % 37 === 0
+  return manipulateDigitToIntermediate(dividend, -11, 37)
 }
 
 module.exports = { isDivisibleByThirtyOne, isDivisibleByThirtySeven }

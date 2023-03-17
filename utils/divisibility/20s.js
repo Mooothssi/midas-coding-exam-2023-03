@@ -4,7 +4,9 @@
  *
  * In response to Midas Developer Test (2023-03)
  */
-const { getLastDigit, removeLastDigit } = require('../base')
+
+const { manipulateDigitToIntermediate } = require("./base")
+
 /**
  * Checks whether the number is divisible by 23 using a Divisibility Rule Shorthand of 23
  *
@@ -12,13 +14,7 @@ const { getLastDigit, removeLastDigit } = require('../base')
  * @returns
  */
 function isDivisibleByTwentyThree(dividend) {
-  const sevenTimesLastDigit = getLastDigit(dividend) * 7
-  const intermediate = removeLastDigit(dividend) + sevenTimesLastDigit
-  const remainder = intermediate % 23
-  if (remainder !== 0 && remainder >= 22) {
-    return isDivisibleByTwentyThree(intermediate)
-  }
-  return remainder % 23 === 0
+  return manipulateDigitToIntermediate(dividend, +7, 23)
 }
 
 /**
@@ -28,13 +24,7 @@ function isDivisibleByTwentyThree(dividend) {
  * @returns
  */
 function isDivisibleByTwentyNine(dividend) {
-  const thriceLastDigit = getLastDigit(dividend) * 3
-  const intermediate = removeLastDigit(dividend) + thriceLastDigit
-  const remainder = intermediate % 29
-  if (remainder !== 0 && remainder >= 28) {
-    return isDivisibleByTwentyNine(intermediate)
-  }
-  return remainder % 29 === 0
+  return manipulateDigitToIntermediate(dividend, +3, 29)
 }
 
 module.exports = { isDivisibleByTwentyThree, isDivisibleByTwentyNine }

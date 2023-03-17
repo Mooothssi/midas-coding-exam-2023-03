@@ -5,7 +5,8 @@
  * In response to Midas Developer Test (2023-03)
  */
 
-const { getLastDigit, removeLastDigit } = require('../base')
+const { getLastDigit } = require('../base')
+const { manipulateDigitToIntermediate } = require('./base')
 
 /**
  * Checks whether the number is divisible by 3 using a Divisibility Rule Shorthand of 3 to improve calculation performance
@@ -26,7 +27,7 @@ function isDivisibleByThree(dividend, sum = 0) {
  * @param {Number} dividend the target dividend
  * @returns
  */
-function isDivisibleByFive(dividend, sum = 0) {
+function isDivisibleByFive(dividend) {
   const lastDigit = getLastDigit(dividend)
   return lastDigit === 5 || lastDigit === 0
 }
@@ -37,13 +38,7 @@ function isDivisibleByFive(dividend, sum = 0) {
  * @returns
  */
 function isDivisibleBySeven(dividend) {
-  const doubledLastDigit = getLastDigit(dividend) * 2
-  const intermediate = removeLastDigit(dividend) - doubledLastDigit
-  const remainder = intermediate % 7
-  if (remainder !== 0 && remainder >= 6) {
-    return isDivisibleBySeven(intermediate)
-  }
-  return remainder % 7 === 0
+  return manipulateDigitToIntermediate(dividend, -2, 7)
 }
 
 module.exports = {
