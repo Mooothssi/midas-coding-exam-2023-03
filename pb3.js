@@ -1,15 +1,12 @@
 /**
  * Author: Tharathorn Boonruttanasathian
  * (c) 17 Mar 2023
- * 
+ *
  * In response to Midas Developer Test (2023-03)
  */
 
-
 const DEFAULT_PRIME_LIST = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-const {
-  getLastDigit
-} = require('./utils.base')
+const { getLastDigit } = require('./utils.base')
 const {
   isEven,
   isDivisibleByThree,
@@ -18,6 +15,7 @@ const {
   isDivisibleByEleven,
   isDivisibleBySeventeen,
   isDivisibleByThirteen,
+  isDivisibleByNineteen
 } = require('./utils.divisibility')
 
 function isDivisibleBy(divisor, dividend) {
@@ -36,6 +34,8 @@ function isDivisibleBy(divisor, dividend) {
       return isDivisibleByThirteen(dividend)
     case 17:
       return isDivisibleBySeventeen(dividend)
+    case 19:
+      return isDivisibleByNineteen(dividend)
     default:
       return dividend % divisor === 0
   }

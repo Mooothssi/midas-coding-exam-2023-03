@@ -103,6 +103,22 @@ function isDivisibleBySeventeen(dividend) {
   return remainder % 17 === 0
 }
 
+/**
+ * TODO: Checks whether the number is divisible by 19 using a Divisibility Rule Shorthand of 19
+ *
+ * @param {Number} dividend the target dividend
+ * @returns
+ */
+function isDivisibleByNineteen(dividend, sum = 0) {
+  const twoTimesLastDigit = getLastDigit(dividend) * 2
+  const intermediate = removeLastDigit(dividend) + twoTimesLastDigit
+  const remainder = intermediate % 19
+  if (remainder !== 0 && remainder >= 18) {
+    return isDivisibleByNineteen(intermediate)
+  }
+  return remainder % 19 === 0
+}
+
 module.exports = {
   /**
    * Checks whether the number is even
@@ -127,4 +143,5 @@ module.exports = {
   isDivisibleByEleven,
   isDivisibleByThirteen,
   isDivisibleBySeventeen,
+  isDivisibleByNineteen,
 }
