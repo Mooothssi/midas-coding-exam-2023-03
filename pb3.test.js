@@ -1,7 +1,10 @@
 /**
  * Author: Tharathorn Boonruttanasathian
  * (c) 17 Mar 2023
+ * 
+ * In response to Midas Developer Test (2023-03)
  */
+
 const { primeAt } = require('./pb3')
 
 describe('(1) Problem 3: Code Tests (small numbers)', () => {
