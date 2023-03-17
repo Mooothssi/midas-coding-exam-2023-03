@@ -31,10 +31,10 @@ test('primeAt(50000) = 611953 ✅ (X-Ref from WolframAlpha)', () => {
   expect(primeAt(50000)).toBe(611953)
 })
 
-// test('primeAt(1000000) = ?', () => {
-//   expect(primeAt(1000000)).toBe('?')
-// })
+test('primeAt(1000000) = 15485863 ✅ (X-Ref from WolframAlpha)', () => {
+  expect(primeAt(1000000)).toBe(15485863)
+})
 
-// test('primeAt(20000000) = ?', () => {
-//   expect(primeAt(20000000)).toBe('?')
-// })
+test('primeAt(20000000) = 373587883 ✅ (X-Ref from WolframAlpha)', () => {
+  expect(primeAt(20000000)).toBe(373587883)
+})
