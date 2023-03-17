@@ -1,7 +1,9 @@
 const { getLastDigit, removeLastDigit } = require('../base')
 
 const PRIME_DIV_ADJUSTMENTS = new Map([
+  [3, -2],
   [7, -2],
+  [11, -1],
   [13, +4],
   [17, -5],
   [19, +2],
@@ -22,6 +24,11 @@ const PRIME_DIV_ADJUSTMENTS = new Map([
   [83, +25],
   [89, +9],
   [97, -29],
+  [101, -10],
+  [103, +31],
+  [107, -32],
+  [109, +11],
+  [113, +34],
 ])
 
 function handleWithDigitAdjustments(dividend, divisor) {

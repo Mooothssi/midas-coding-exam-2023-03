@@ -18,12 +18,8 @@ function isDivisibleBy(divisor, dividend) {
   switch (divisor) {
     case 2:
       return isEven(dividend)
-    case 3:
-      return isDivisibleByThree(dividend)
     case 5:
       return isDivisibleByFive(dividend)
-    case 11:
-      return isDivisibleByEleven(dividend)
     default:
       if (handleWithDigitAdjustments(dividend, divisor)) return true
       return dividend % divisor === 0
