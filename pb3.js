@@ -53,14 +53,15 @@ function isDivisibleByPrimes(dividend, primeList) {
   return false
 }
 
-function isPrime(num, primeList) {
+function isPrime(num, primeList, maxPrime = 0) {
+  if (maxPrime === 0) maxPrime = Math.max(...primeList)
   if (num == 1) return false
   if (primeList.includes(num)) return true
   if (isDivisibleByPrimes(num, primeList)) {
     return false
   }
   // brute-force it.
-  for (let n = Math.max(...primeList); n < num - 1; n++) {
+  for (let n = maxPrime; n < num - 1; n++) {
     if (num % n === 0) {
       return true
     }
@@ -75,7 +76,7 @@ function primeAt(ordinalLimit) {
   const primeList = [...DEFAULT_PRIME_LIST]
   maxPrime = Math.max(...primeList)
   for (let i = 1; i <= +Infinity; i++) {
-    if (isPrime(i, primeList)) {
+    if (isPrime(i, primeList, maxPrime)) {
       ordinalCounter++
       targetPrime = i
       if (targetPrime > maxPrime) {
