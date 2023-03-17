@@ -1,0 +1,14 @@
+{
+  "name": "2023-midas-coding-exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pb1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Tharathorn B",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
