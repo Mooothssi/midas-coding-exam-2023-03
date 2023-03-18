@@ -6,12 +6,8 @@
  */
 const {
   isEven,
-  isDivisibleByThree,
   isDivisibleByFive,
 } = require('./1s')
-const {
-  isDivisibleByEleven,
-} = require('./10s')
 const { handleWithDigitAdjustments } = require('./base')
 
 function isDivisibleBy(divisor, dividend) {
