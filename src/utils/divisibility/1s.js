@@ -6,7 +6,6 @@
  */
 
 const { getLastDigit } = require('../base')
-const { manipulateDigitToIntermediate } = require('./base')
 
 /**
  * Checks whether the number is divisible by 3 using a Divisibility Rule Shorthand of 3 to improve calculation performance
@@ -33,14 +32,6 @@ function isDivisibleByFive(dividend) {
 }
 
 /**
- * Checks whether the number is divisible by 7 using a Divisibility Rule Shorthand of 7 to improve performance
- * @param {Number} dividend the target dividend
- * @returns
- */
-function isDivisibleBySeven(dividend) {
-  return manipulateDigitToIntermediate(dividend, -2, 7)
-}
-/**
  * Checks whether the number is even
  * @param {Number} number the target number
  * @returns
@@ -61,5 +52,4 @@ module.exports = {
   },
   isDivisibleByThree,
   isDivisibleByFive,
-  isDivisibleBySeven,
 }

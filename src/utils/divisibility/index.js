@@ -4,16 +4,15 @@
  *
  * In response to Midas Developer Test (2023-03)
  */
-const {
-  isEven,
-  isDivisibleByFive,
-} = require('./1s')
+const { isEven, isDivisibleByFive, isDivisibleByThree } = require('./1s')
 const { handleWithDigitAdjustments } = require('./base')
 
 function isDivisibleBy(divisor, dividend) {
   switch (divisor) {
     case 2:
       return isEven(dividend)
+    case 3:
+      return isDivisibleByThree(dividend)
     case 5:
       return isDivisibleByFive(dividend)
     default:
