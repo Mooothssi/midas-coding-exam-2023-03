@@ -6,7 +6,7 @@ Run each problem's test cases in Node.js using `npm run test` and see the result
 | ---------------- | ----------------------------- |
 | **Author**       | Tharathorn Boonruttanasathian |
 | **Conducted on** | 16 – 18 Mar 2023              |
-| **Attempts**     | 1 _(exactly once)_            |
+| **Attempts**     | 1 _(taken exactly once)_            |
 
 ## Problems & How I Solved It
 
