@@ -5,7 +5,8 @@
   "main": "pb1.js",
   "scripts": {
     "test": "jest --verbose",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "author": "Tharathorn B",
   "license": "ISC",
