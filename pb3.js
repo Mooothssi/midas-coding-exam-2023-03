@@ -5,7 +5,7 @@
  * In response to Midas Developer Test (2023-03)
  */
 
-const DEFAULT_PRIME_LIST = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+const ELEMENTAL_PRIME_LIST = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 const PRIMES_FILENAME = 'pb3.primes.txt'
 const { isDivisibleBy } = require('./utils/divisibility')
 const { default: endent } = require('endent')
@@ -54,9 +54,10 @@ function primeAt(ordinalLimit) {
   let targetPrime = 2
   let ordinalCounter = 0
   let maxPrime = 2
-  const readResult = readPrimesFromFiles()
-  const primeList = readResult === null ? [...DEFAULT_PRIME_LIST] : readResult
-  maxPrime = Math.max(...primeList)
+  const readResult =
+    ordinalLimit > 10 ? readPrimesFromFiles() : ELEMENTAL_PRIME_LIST
+  const primeList = readResult === null ? [...ELEMENTAL_PRIME_LIST] : readResult
+  maxPrime = primeList[primeList.length - 1]
   for (let i = 1; i <= +Infinity; i++) {
     if (isPrime(i, primeList, maxPrime)) {
       ordinalCounter++
