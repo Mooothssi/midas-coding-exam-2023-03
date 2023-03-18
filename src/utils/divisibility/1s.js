@@ -40,17 +40,17 @@ function isDivisibleByFive(dividend) {
 function isDivisibleBySeven(dividend) {
   return manipulateDigitToIntermediate(dividend, -2, 7)
 }
+/**
+ * Checks whether the number is even
+ * @param {Number} number the target number
+ * @returns
+ */
+function isEven(number) {
+  return getLastDigit(number) % 2 === 0
+}
 
 module.exports = {
-  /**
-   * Checks whether the number is even
-   * @param {Number} number the target number
-   * @returns
-   */
-  isEven(number) {
-    return getLastDigit(number) % 2 === 0
-  },
-
+  isEven,
   /**
    * Checks whether the number is odd
    * @param {Number} number the target number
