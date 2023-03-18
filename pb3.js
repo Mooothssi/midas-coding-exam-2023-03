@@ -49,7 +49,7 @@ function isPrime(num, primeList, maxPrime = 0) {
   }
   return true
 }
-// TODO: should store previous `primeList` to `DEFAULT_PRIME_LIST`, read from serialized prime in file
+
 function primeAt(ordinalLimit) {
   let targetPrime = 2
   let ordinalCounter = 0
