@@ -32,13 +32,13 @@ describe('(3L) Problem 3: Code test cases (large numbers)', () => {
   test('3L.8. primeAt(600000) = 8960453 ✅ (📖 x-ref: WolframAlpha)', () => {
     expect(primeAt(600000)).toBe(8960453)
   })
-  test('3L.9 primeAt(700000) = 10570841 ✅ (📖 x-ref: WolframAlpha)', () => {
+  test('3L.9. primeAt(700000) = 10570841 ✅ (📖 x-ref: WolframAlpha)', () => {
     expect(primeAt(700000)).toBe(10570841)
   })
-  test('3L.10 primeAt(800000) = 12195257 ✅ (📖 x-ref: WolframAlpha)', () => {
+  test('3L.10. primeAt(800000) = 12195257 ✅ (📖 x-ref: WolframAlpha)', () => {
     expect(primeAt(800000)).toBe(12195257)
   })
-  test('3L.11 primeAt(900000) = 13834103 ✅ (📖 x-ref: WolframAlpha)', () => {
+  test('3L.11. primeAt(900000) = 13834103 ✅ (📖 x-ref: WolframAlpha)', () => {
     expect(primeAt(900000)).toBe(13834103)
   })
 })
