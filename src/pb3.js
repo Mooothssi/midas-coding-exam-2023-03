@@ -48,12 +48,9 @@ function primeAt(ordinalLimit) {
   if (primeList.length >= ordinalLimit) {
     return primeList[ordinalLimit - 1]
   } else {
-    if (primeList.length < ordinalLimit) {
-      nearestPrime = maxPrime
-      ordinalCounter = primeList.length - 1
-    }
+    nearestPrime = maxPrime
+    ordinalCounter = primeList.length - 1
   }
-
   for (let i = nearestPrime; i <= +Infinity; i++) {
     if (isPrime(i, primeList, nearestPrime)) {
       ordinalCounter++
