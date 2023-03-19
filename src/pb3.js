@@ -35,32 +35,40 @@ function writePrimesToFile(filename, primeList) {
  * @returns the target prime number at the given order
  */
 function primeAt(ordinalLimit) {
-  let targetPrime = 2
-  let ordinalCounter = 0
-  let maxPrime = 2
   const readResult =
     ordinalLimit > DEFAULT_SMALL_ORDINAL_LIMIT
       ? readPrimesFromFile(PRIMES_FILENAME)
       : ELEMENTAL_PRIME_LIST
-
   const primeList = readResult === null ? [...ELEMENTAL_PRIME_LIST] : readResult
+  let targetPrime = 2
+  let ordinalCounter = 0
+  let maxPrime = primeList[primeList.length - 1]
+  let nearestPrime = 2
+
   if (primeList.length >= ordinalLimit) {
     return primeList[ordinalLimit - 1]
+  } else {
+    if (primeList.length < ordinalLimit) {
+      nearestPrime = maxPrime
+      ordinalCounter = primeList.length - 1
+    }
   }
-  maxPrime = primeList[primeList.length - 1]
-  for (let i = 1; i <= +Infinity; i++) {
-    if (isPrime(i, primeList, maxPrime)) {
+
+  for (let i = nearestPrime; i <= +Infinity; i++) {
+    if (isPrime(i, primeList, nearestPrime)) {
       ordinalCounter++
       targetPrime = i
       if (targetPrime > maxPrime) {
         primeList.push(targetPrime)
-        console.log(primeList.length)
         maxPrime = targetPrime
       }
-      if (ordinalLimit === ordinalCounter) break
+      if (ordinalCounter === ordinalLimit) break
     }
   }
-  if (primeList.length >= readResult.length && ordinalLimit > DEFAULT_SMALL_ORDINAL_LIMIT)
+  if (
+    primeList.length >= readResult.length &&
+    ordinalLimit > DEFAULT_SMALL_ORDINAL_LIMIT
+  )
     writePrimesToFile(PRIMES_FILENAME, primeList)
   return targetPrime
 }

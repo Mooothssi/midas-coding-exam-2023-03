@@ -1,9 +1,7 @@
-const { parentPort, workerData } = require('node:worker_threads')
-
-function heavyIteratePrimes(num, maxPrime) {
+function heavyIteratePrimes(num, startPrime) {
   // Brute-force the number. Cannot factorize greater than the number itself squared.
   // TODO: pass on this heavy work to a worker thread
-  for (let n = maxPrime; n < Math.sqrt(num); n++) {
+  for (let n = startPrime; n < num; n++) {
     if (num % n === 0) {
       return false
     }
@@ -11,5 +9,6 @@ function heavyIteratePrimes(num, maxPrime) {
   return true
 }
 
-const { num, maxPrime } = workerData
-parentPort.postMessage(heavyIteratePrimes(num, maxPrime))
+module.exports = {
+  heavyIteratePrimes
+}
