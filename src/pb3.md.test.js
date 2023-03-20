@@ -7,7 +7,7 @@
 
 const { primeAt } = require('./pb3')
 
-describe('(3M) Problem 3: Code Tests (medium numbers)', () => {
+describe('(3M) Problem 3: Test cases (medium numbers)', () => {
   test('3M.1. primeAt(2000) = 17389 ✅ (📖 x-ref from WolframAlpha)', () => {
     expect(primeAt(2000)).toBe(17389)
   })

@@ -7,7 +7,7 @@
 
 const { primeAt } = require('./pb3')
 
-describe('(3S) Problem 3: Code Tests (small numbers)', () => {
+describe('(3S) Problem 3: Test cases (small numbers)', () => {
   test('3S.1. primeAt(1) = 2 ✅', () => {
     expect(primeAt(1)).toBe(2)
   })

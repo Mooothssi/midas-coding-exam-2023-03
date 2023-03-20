@@ -71,8 +71,7 @@ function primeAt(ordinalLimit) {
     }
     if (i >= 11) {
       i += quickOffsets[n]
-      n++
-      if (n > 3) n = 0
+      n = (n + 1) % 4
     } else {
       i++
     }
