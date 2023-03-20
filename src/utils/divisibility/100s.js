@@ -1,3 +1,10 @@
+/**
+ * Author: Tharathorn Boonruttanasathian
+ * (c) 17 – 18 Mar 2023
+ *
+ * In response to Midas Developer Test (2023-03)
+ */
+
 function isDivisibleByOneHundredAndOne(dividend) {
   let counter = 1
   const oddPlaces = []
