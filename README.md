@@ -1,4 +1,4 @@
-# Midas Developer Test (2023-03)
+# Answers to Midas Developer Test (2023-03)
 
 Run each problem's test cases in Node.js using `npm run test` and see the results for each problem. Algorithmic solutions must be viewed using a PDF viewer.
 
