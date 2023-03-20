@@ -11,6 +11,7 @@ const DEFAULT_SMALL_ORDINAL_LIMIT = 10
 
 const { default: endent } = require('endent')
 const fs = require('fs')
+const { getLastDigit } = require('./utils/base')
 const { isPrime } = require('./utils/prime')
 
 function readPrimesFromFile(filename) {
@@ -40,18 +41,25 @@ function primeAt(ordinalLimit) {
       ? readPrimesFromFile(PRIMES_FILENAME)
       : ELEMENTAL_PRIME_LIST
   const primeList = readResult === null ? [...ELEMENTAL_PRIME_LIST] : readResult
+
   let targetPrime = 2
   let ordinalCounter = 0
   let maxPrime = primeList[primeList.length - 1]
   let nearestPrime = 2
-
   if (primeList.length >= ordinalLimit) {
     return primeList[ordinalLimit - 1]
   } else {
     nearestPrime = maxPrime
     ordinalCounter = primeList.length - 1
   }
-  for (let i = nearestPrime; i <= +Infinity; i++) {
+  let i = nearestPrime
+  const lastDigitOfNearestPrime = getLastDigit(nearestPrime)
+  let quickLastDigit = [1, 3, 7, 9].findIndex(
+    (x) => x === lastDigitOfNearestPrime,
+  )
+  let quickOffsets = [+2, +4, +2, +2]
+  let n = quickLastDigit === -1 ? 0 : quickLastDigit
+  while (i <= +Infinity) {
     if (isPrime(i, primeList, nearestPrime)) {
       ordinalCounter++
       targetPrime = i
@@ -60,6 +68,13 @@ function primeAt(ordinalLimit) {
         maxPrime = targetPrime
       }
       if (ordinalCounter === ordinalLimit) break
+    }
+    if (i >= 11) {
+      i += quickOffsets[n]
+      n++
+      if (n > 3) n = 0
+    } else {
+      i++
     }
   }
   if (
