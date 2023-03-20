@@ -20,13 +20,13 @@ describe('(3S) Problem 3: Code Tests (small numbers)', () => {
   test('3S.4. primeAt(100) = 541 ✅', () => {
     expect(primeAt(100)).toBe(541)
   })
-  // test('3S.5. primeAt(555) = 4019 ✅ (📖 x-ref from WolframAlpha)', () => {
-  //   expect(primeAt(555)).toBe(4019)
-  // })
-  // test('3S.6. primeAt(666) = 4973 ✅ (📖 x-ref from WolframAlpha)', () => {
-  //   expect(primeAt(666)).toBe(4973)
-  // })
-  // test('3S.7. primeAt(1000) = 7919 ✅ (📖 x-ref from WolframAlpha)', () => {
-  //   expect(primeAt(1000)).toBe(7919)
-  // })
+  test('3S.5. primeAt(555) = 4019 ✅ (📖 x-ref from WolframAlpha)', () => {
+    expect(primeAt(555)).toBe(4019)
+  })
+  test('3S.6. primeAt(666) = 4973 ✅ (📖 x-ref from WolframAlpha)', () => {
+    expect(primeAt(666)).toBe(4973)
+  })
+  test('3S.7. primeAt(1000) = 7919 ✅ (📖 x-ref from WolframAlpha)', () => {
+    expect(primeAt(1000)).toBe(7919)
+  })
 })
