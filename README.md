@@ -1,6 +1,8 @@
 # Answers to Midas Developer Test (2023-03)
 
-Run each problem's test cases in Node.js using `npm run test` and see the results for each problem. Algorithmic solutions must be viewed using a PDF viewer.
+Run each problem's test cases in Node.js using `npm run test` and see the results for each problem.
+Make sure to run `npm install` to install all test dependencies before running the test cases.
+Algorithmic solutions must be viewed using a PDF viewer.
 
 |              |                               |
 | ------------ | ----------------------------- |
